@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import About from "./components/about/About";
 
 export default function Home() {
   return (
@@ -8,15 +9,8 @@ export default function Home() {
 
       <main>
         <Hero />
+        <About />
 
-        <section
-          id="about"
-          className="min-h-screen bg-[#030405] px-6 py-32 text-white"
-        >
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-4xl font-bold">About</h2>
-          </div>
-        </section>
 
         <section
           id="experience"
