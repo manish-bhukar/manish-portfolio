@@ -130,7 +130,6 @@ export default function Hero() {
               <span className="mr-3">👋</span>
               <span>Hey, I'm</span>
               <span className="mx-3 h-4 w-px bg-lime-400/40" />
-              <span className="font-mono">Manish Bhukar</span>
             </motion.div>
 
             {/* TYPING NAME */}
