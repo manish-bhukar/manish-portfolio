@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/about/About";
 import Projects from "./components/projects/Projects";
-
+import Skills from "./components/skills/skiils";
 export default function Home() {
   return (
     <>
@@ -12,7 +12,7 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-
+        <Skills />
        
 
         <section
