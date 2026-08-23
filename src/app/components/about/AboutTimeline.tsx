@@ -9,7 +9,7 @@ export default function AboutTimeline() {
   return (
     <div className="relative mt-14">
       {/* Background timeline line */}
-      <div className="absolute left-[30px] top-8 bottom-8 w-px bg-white/10" />
+      <div className="absolute left-[30px] top-4 bottom-4 w-px bg-white/10" />
 
       {/* Animated timeline line */}
       <motion.div
@@ -29,7 +29,7 @@ export default function AboutTimeline() {
         className="absolute left-[30px] top-8 bottom-8 w-px bg-lime-400 shadow-[0_0_10px_rgba(163,230,53,0.7)]"
       />
 
-      <div className="space-y-20">
+      <div className="space-y-5">
         {timelineData.map((item, index) => (
           <TimelineItem
             key={item.title}

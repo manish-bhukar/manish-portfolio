@@ -78,7 +78,7 @@ function AboutImage() {
       {/* Image */}
       <div className="relative overflow-hidden rounded-[28px] border border-lime-400/30 bg-[#080b0c] shadow-[0_0_50px_rgba(163,230,53,0.08)]">
         <img
-          src="/about_me.jpg"
+          src="/about_me.jpeg"
           alt="Manish working"
           className="h-[520px] w-full object-cover"
         />

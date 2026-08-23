@@ -16,11 +16,11 @@ export default function Home() {
        
 
         <section
-          id="skills"
+          id="blog"
           className="min-h-screen bg-[#07090a] px-6 py-32 text-white"
         >
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-4xl font-bold">Skills</h2>
+            <h2 className="text-4xl font-bold">Blog</h2>
           </div>
         </section>
 
