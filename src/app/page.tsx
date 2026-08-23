@@ -4,6 +4,7 @@ import About from "./components/about/About";
 import Projects from "./components/projects/Projects";
 import Skills from "./components/skills/skiils";
 import Blog from "./components/Blog";
+import Contact from "./components/contact/Contact";
 export default function Home() {
   return (
     <>
@@ -16,14 +17,7 @@ export default function Home() {
         <Skills />
         <Blog />
 
-        <section
-          id="contact"
-          className="min-h-screen bg-[#030405] px-6 py-32 text-white"
-        >
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-4xl font-bold">Contact</h2>
-          </div>
-        </section>
+        <Contact />
       </main>
     </>
   );

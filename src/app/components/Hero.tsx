@@ -106,7 +106,7 @@ export default function Hero() {
               className="mt-8 flex items-center gap-2 rounded-full border border-lime-400/70 bg-lime-400/5 px-5 py-2 text-sm font-semibold tracking-wide text-lime-400 shadow-[0_0_20px_rgba(163,230,53,0.12)]"
             >
               <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]" />
-              OPEN TO WORK
+              Software Engineer
             </motion.div>
           </motion.div>
 
