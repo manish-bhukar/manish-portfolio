@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-[#030405] px-6 py-28 text-white lg:px-10"
+      className="relative overflow-hidden bg-transparent px-6 py-28 text-white lg:px-10"
     >
       {/* Background grid */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.035] [background-image:linear-gradient(rgba(163,230,53,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(163,230,53,0.5)_1px,transparent_1px)] [background-size:60px_60px]" />

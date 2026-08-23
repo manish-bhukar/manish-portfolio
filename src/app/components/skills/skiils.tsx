@@ -12,7 +12,7 @@ export default function Skills() {
       className="
         relative
         overflow-hidden
-        bg-[#030405]
+        bg-transparent
         px-6
         py-28
         text-white

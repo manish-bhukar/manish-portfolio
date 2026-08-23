@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#030405] px-6 py-28 text-white lg:px-10"
+      className="relative overflow-hidden bg-transparent px-6 py-28 text-white lg:px-10"
     >
       {/* Background glow */}
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[400px] w-[400px] rounded-full bg-lime-500/5 blur-[130px]" />

@@ -43,7 +43,7 @@ export default function Hero() {
   }, [displayText, isDeleting]);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#030405] text-white">
+    <section className="relative min-h-screen overflow-hidden bg-transparent text-white">
       {/* Background glow */}
       <div className="pointer-events-none absolute -left-40 top-1/4 h-[500px] w-[500px] rounded-full bg-lime-500/10 blur-[140px]" />
 
