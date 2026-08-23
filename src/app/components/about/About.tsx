@@ -15,7 +15,6 @@ export default function About() {
       <div className="pointer-events-none absolute -right-40 bottom-0 h-[450px] w-[450px] rounded-full bg-lime-500/5 blur-[150px]" />
 
       <div className="relative mx-auto max-w-6xl">
-
         {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,6 +25,7 @@ export default function About() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-lime-400/30 bg-lime-400/5 px-4 py-2 text-sm font-medium text-lime-400">
             <span className="h-2 w-2 rounded-full bg-lime-400 shadow-[0_0_10px_#a3e635]" />
+
             ABOUT ME
           </div>
 
@@ -46,21 +46,22 @@ export default function About() {
 
         {/* Main content */}
         <div className="grid items-start gap-16 lg:grid-cols-[1fr_0.85fr] lg:gap-20">
-
+          
           {/* Timeline */}
           <AboutTimeline />
 
-          {/* Image */}
+          {/* About image */}
           <AboutImage />
+
         </div>
       </div>
     </section>
   );
 }
 
-/* ---------------------------------- */
-/* About image                        */
-/* ---------------------------------- */
+/* ----------------------------------
+   About image
+---------------------------------- */
 
 function AboutImage() {
   return (
@@ -98,7 +99,7 @@ function AboutImage() {
         </div>
       </div>
 
-      {/* Decorative circle */}
+      {/* Decorative rotating circle */}
       <motion.div
         animate={{ rotate: 360 }}
         transition={{

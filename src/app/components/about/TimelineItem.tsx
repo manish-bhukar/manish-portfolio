@@ -1,105 +1,165 @@
 "use client";
 
 import { motion } from "motion/react";
-import { TimelineItem as TimelineItemType } from "./type";
+
+import { TimelineItem as TimelineItemType } from "../../types/about.type";
 
 type Props = {
   item: TimelineItemType;
   index: number;
 };
 
-function TimelineIcon({ type }: { type: TimelineItemType["icon"] }) {
-  if (type === "education") {
-    return (
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      >
-        <path d="M3 10l9-5 9 5-9 5-9-5Z" />
-        <path d="M7 12.5V17c3 2 7 2 10 0v-4.5" />
-        <path d="M21 10v6" />
-      </svg>
-    );
-  }
 
-  if (type === "internship") {
-    return (
-      <svg
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-      >
-        <rect x="3" y="7" width="18" height="13" rx="2" />
-        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-        <path d="M3 12h18" />
-        <path d="M10 12v2h4v-2" />
-      </svg>
-    );
-  }
+function TimelineIcon({
+  icon,
+}: {
+  icon: "education" | "work" | "code";
+}) {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        scale: 0.5,
+      }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.4,
+      }}
+      transition={{
+        duration: 0.5,
+        ease: "backOut",
+      }}
+      className="relative z-10 flex h-[62px] w-[62px] shrink-0 items-center justify-center rounded-full border border-lime-400 bg-[#030405] text-lime-400 shadow-[0_0_20px_rgba(163,230,53,0.12)]"
+    >
+      {icon === "education" && <EducationIcon />}
 
+      {icon === "work" && <WorkIcon />}
+
+      {icon === "code" && <CodeIcon />}
+    </motion.div>
+  );
+}
+
+function EducationIcon() {
   return (
     <svg
-      width="20"
-      height="20"
+      width="27"
+      height="27"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
-      <path d="M12 2v6" />
-      <path d="M5.5 8.5 3 11l3.5 3.5" />
-      <path d="M18.5 8.5 21 11l-3.5 3.5" />
-      <path d="M12 14v8" />
-      <path d="M8 18h8" />
+      <path d="M2 10l10-5 10 5-10 5-10-5Z" />
+      <path d="M6 12.5V17c3 2 9 2 12 0v-4.5" />
+      <path d="M22 10v6" />
     </svg>
   );
 }
 
-export default function TimelineItem({ item, index }: Props) {
+function WorkIcon() {
+  return (
+    <svg
+      width="27"
+      height="27"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect
+        x="3"
+        y="7"
+        width="18"
+        height="13"
+        rx="2"
+      />
+      <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      <path d="M3 12h18" />
+      <path d="M10 12v2h4v-2" />
+    </svg>
+  );
+}
+
+function CodeIcon() {
+  return (
+    <svg
+      width="27"
+      height="27"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m8 9-3 3 3 3" />
+      <path d="m16 9 3 3-3 3" />
+      <path d="m14 5-4 14" />
+    </svg>
+  );
+}
+
+export default function TimelineItem({
+  item,
+  index,
+}: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, x: -30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      initial={{
+        opacity: 0,
+        x: 30,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.35,
+      }}
       transition={{
         duration: 0.7,
-        delay: index * 0.1,
+        delay: 0.35 + index * 0.3,
+        ease: "easeOut",
       }}
-      className="relative flex gap-6"
+      className="relative flex gap-8"
     >
       {/* Timeline icon */}
-      <div
-        className={`relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border bg-[#030405] text-lime-400 ${
-          index === 2
-            ? "border-lime-400 bg-lime-400/5 shadow-[0_0_25px_rgba(163,230,53,0.15)]"
-            : "border-lime-400/60 shadow-[0_0_20px_rgba(163,230,53,0.1)]"
-        }`}
-      >
-        <TimelineIcon type={item.icon} />
-      </div>
+      <TimelineIcon icon={item.icon} />
 
-      {/* Content */}
-      <div className={index !== 2 ? "pb-14" : ""}>
-        <p className="mb-2 text-sm font-semibold text-lime-400">
-          {item.period}
-        </p>
+      {/* Timeline content */}
+      <div className="min-w-0 flex-1 pb-2">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            delay: 0.5 + index * 0.3,
+          }}
+          className="text-lg font-bold text-lime-400"
+        >
+          {item.year}
+        </motion.p>
 
-        <h3 className="text-xl font-semibold text-white sm:text-2xl">
+        <h3 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
           {item.title}
         </h3>
 
-        <p className="mt-2 text-gray-400">
+        <p className="mt-3 text-lg text-gray-400 sm:text-xl">
           {item.organization}
         </p>
 
-        <p className="mt-3 text-sm leading-6 text-gray-500">
+        <p className="mt-6 max-w-4xl text-base leading-8 text-gray-500 sm:text-lg">
           {item.description}
         </p>
       </div>

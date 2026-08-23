@@ -1,21 +1,43 @@
 "use client";
 
-import { aboutTimeline } from "./constants";
+import { motion } from "motion/react";
+
+import { timelineData } from "../../data/about.data";
 import TimelineItem from "./TimelineItem";
 
 export default function AboutTimeline() {
   return (
-    <div className="relative">
-      {/* Timeline vertical line */}
-      <div className="absolute left-[22px] top-8 h-[calc(100%-40px)] w-px bg-gradient-to-b from-lime-400/60 via-lime-400/20 to-transparent" />
+    <div className="relative mt-14">
+      {/* Background timeline line */}
+      <div className="absolute left-[30px] top-8 bottom-8 w-px bg-white/10" />
 
-      {aboutTimeline.map((item, index) => (
-        <TimelineItem
-          key={`${item.period}-${item.title}`}
-          item={item}
-          index={index}
-        />
-      ))}
+      {/* Animated timeline line */}
+      <motion.div
+        initial={{ scaleY: 0 }}
+        whileInView={{ scaleY: 1 }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        transition={{
+          duration: 2,
+          ease: "easeInOut",
+        }}
+        style={{
+          transformOrigin: "top",
+        }}
+        className="absolute left-[30px] top-8 bottom-8 w-px bg-lime-400 shadow-[0_0_10px_rgba(163,230,53,0.7)]"
+      />
+
+      <div className="space-y-20">
+        {timelineData.map((item, index) => (
+          <TimelineItem
+            key={item.title}
+            item={item}
+            index={index}
+          />
+        ))}
+      </div>
     </div>
   );
 }
