@@ -1,45 +1,38 @@
-import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    const {
-      name,
-      email,
-      message,
-    } = body;
+    const { name, email, message } = body;
 
+    // Basic validation
     if (!name || !email || !message) {
       return NextResponse.json(
         {
           success: false,
-          message: "Please fill all required fields.",
+          message: "Please fill in all fields.",
         },
-        {
-          status: 400,
-        }
+        { status: 400 }
       );
     }
 
+    // Create transporter
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: true,
+      service: "gmail",
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
+    // Send email
     await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: process.env.CONTACT_RECEIVER,
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
       replyTo: email,
-
-      subject: `Portfolio Contact — ${name}`,
-
+      subject: `Portfolio Contact: ${name}`,
       text: `
 Name: ${name}
 Email: ${email}
@@ -47,7 +40,6 @@ Email: ${email}
 Message:
 ${message}
       `,
-
       html: `
         <div style="font-family: Arial, sans-serif;">
           <h2>New Portfolio Contact</h2>
@@ -59,8 +51,6 @@ ${message}
           <p>
             <strong>Email:</strong> ${email}
           </p>
-
-          <hr />
 
           <p>
             <strong>Message:</strong>
@@ -85,9 +75,7 @@ ${message}
         success: false,
         message: "Something went wrong. Please try again.",
       },
-      {
-        status: 500,
-      }
+      { status: 500 }
     );
   }
 }
