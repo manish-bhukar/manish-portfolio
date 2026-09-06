@@ -1,13 +1,13 @@
 export const socialLinks = [
   {
     name: "Instagram",
-    username: "@your_username",
-    href: "https://instagram.com/your_username",
+    username: "@manish__bhukar",
+    href: "https://instagram.com/manish__bhukar",
   },
   {
     name: "LinkedIn",
     username: "Manish Bhukar",
-    href: "https://linkedin.com/in/your_username",
+    href: "www.linkedin.com/in/manish-bhukar",
   },
   {
     name: "GitHub",

@@ -191,7 +191,7 @@ export default function Contact() {
                   hover:text-lime-400
                 "
               >
-                YOUR_EMAIL@gmail.com
+                bhukarmanish923@gmail.com
               </a>
             </div>
           </motion.div>

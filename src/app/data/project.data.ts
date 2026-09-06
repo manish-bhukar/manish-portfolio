@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "Empowered teams to visually architect and export scalable cloud infrastructure, bridging the gap between design and deployment workflows.",
     ],
 
-    githubUrl: "https://github.com/YOUR_USERNAME/InfraSketch",
+    githubUrl: "https://github.com/manish-bhukar/InfraSketch-",
 
     image: "/infrasketch.png",
     imageAlt: "InfraSketch cloud infrastructure design platform",
@@ -60,7 +60,7 @@ export const projects: Project[] = [
       "Enabled students to view menus, expenses and notices while submitting complaints directly to the chief warden.",
     ],
 
-    githubUrl: "https://github.com/YOUR_USERNAME/Mess-Relay",
+    githubUrl: "https://github.com/manish-bhukar/Mess-Relay",
 
     image: "/mess-relay.png",
     imageAlt: "Mess Relay mess management platform",
@@ -90,7 +90,7 @@ export const projects: Project[] = [
       "Engineered seamless job applications with real-time updates and automated email alerts using NodeMailer.",
     ],
 
-    githubUrl: "https://github.com/YOUR_USERNAME/Job-Connect",
+    githubUrl: "https://github.com/manish-bhukar/jobConnect-",
 
     image: "/job-connect.png",
     imageAlt: "Job Connect recruitment platform",
