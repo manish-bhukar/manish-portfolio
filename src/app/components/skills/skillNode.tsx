@@ -2,11 +2,15 @@
 
 import { Html } from "@react-three/drei";
 import { useState } from "react";
-import { Skill } from "../../types/skills.type";
+import type { Skill } from "../../types/skills.type";
 
 type SkillNodeProps = {
   skill: Skill & {
-    icon: React.ElementType;
+    icon: React.ComponentType<{
+      size?: number;
+      color?: string;
+      style?: React.CSSProperties;
+    }>;
   };
   position: [number, number, number];
 };
@@ -37,14 +41,14 @@ export default function SkillNode({
         >
           {/* Icon */}
           <div
-            className={`
+            className="
               flex h-14 w-14 items-center justify-center
               rounded-xl border
               bg-[#080b0c]/90
               backdrop-blur-md
               transition-all duration-300
               sm:h-16 sm:w-16
-            `}
+            "
             style={{
               borderColor: `${skill.color}55`,
               boxShadow: hovered
@@ -54,9 +58,7 @@ export default function SkillNode({
           >
             <Icon
               size={34}
-              style={{
-                color: skill.color,
-              }}
+              color={skill.color}
             />
           </div>
 

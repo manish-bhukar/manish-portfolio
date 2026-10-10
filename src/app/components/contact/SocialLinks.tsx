@@ -3,8 +3,7 @@
 import { ArrowUpRight } from "lucide-react";
 import {
   SiGithub,
-  SiInstagram,
-  SiLinkedin,
+  SiInstagram
 } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
 

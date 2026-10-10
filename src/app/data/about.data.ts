@@ -23,4 +23,4 @@ export const timelineData = [
       "Currently focused on frontend engineering, building production-ready experiences and working on observability and application reliability.",
     icon: "code",
   },
-];
+] as const;

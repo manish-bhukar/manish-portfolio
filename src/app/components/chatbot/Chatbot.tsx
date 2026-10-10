@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import ChatButton from "./ChatButton";
 import { ChatWindow } from "./ChatWindow";
-import type { ChatMessage } from "@/types/chatbot.types";
+import type { ChatMessage } from "../../types/chatbot.types"
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
