@@ -7,7 +7,7 @@ export const socialLinks = [
   {
     name: "LinkedIn",
     username: "Manish Bhukar",
-    href: "www.linkedin.com/in/manish-bhukar",
+    href: "https://www.linkedin.com/in/manish-bhukar/",
   },
   {
     name: "GitHub",

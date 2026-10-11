@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "Empowered teams to visually architect and export scalable cloud infrastructure, bridging the gap between design and deployment workflows.",
     ],
 
-    githubUrl: "https://github.com/manish-bhukar/InfraSketch-",
+    githubUrl: "https://github.com/manish-bhukar/InfraSketch",
 
     image: "/infrasketch.png",
     imageAlt: "InfraSketch cloud infrastructure design platform",

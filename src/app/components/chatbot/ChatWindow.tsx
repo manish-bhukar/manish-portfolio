@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -41,10 +40,13 @@ export function ChatWindow({
     <section
       aria-label="Ask Manish AI chat window"
       className="
-        mb-3 flex h-[min(620px,calc(100dvh-120px))]
-        w-[min(400px,calc(100vw-40px)] flex-col
-        overflow-hidden rounded-2xl border border-white/10
-        bg-zinc-950 text-white shadow-2xl shadow-black/40
+        mb-3 flex
+        h-[min(560px,calc(100dvh-112px))]
+        w-[min(380px,calc(100vw-32px))]
+        flex-col overflow-hidden
+        rounded-2xl border border-white/10
+        bg-zinc-950 text-white
+        shadow-2xl shadow-black/40
         animate-in fade-in slide-in-from-bottom-3 duration-200
       "
     >
@@ -65,6 +67,7 @@ export function ChatWindow({
                 <h3 className="text-lg font-semibold tracking-tight">
                   Hey, welcome!
                 </h3>
+
                 <Sparkles
                   size={17}
                   className="text-lime-300"
@@ -117,15 +120,6 @@ export function ChatWindow({
             className="rounded-xl border border-red-400/20 bg-red-400/5 px-3 py-2.5 text-sm text-red-300"
           >
             {error}
-            <button
-              type="button"
-              onClick={() => {
-                // Visitors can retry by sending their message again.
-              }}
-              className="ml-2 underline underline-offset-2"
-            >
-              Try again by resending
-            </button>
           </div>
         )}
 
